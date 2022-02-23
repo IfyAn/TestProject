@@ -17,16 +17,21 @@ import Top from '../components/Top';
       <ImageBackground style={styles.container} source={require('../../assets/cloth.jpg')} >
         <StatusBar barStyle={barStyle} animated={true}  backgroundColor="#112D42"  />
         <Image source={require('../../assets/basket.png')} style={styles.img} />
-        <Text style={styles.firstText}>Welcome to</Text>
-        <Text style={styles.bigText}>basket online store</Text>
+        <Text style={styles.firstText}>Start Shopping</Text>
+        <Text style={styles.bigText}>Stay Happy.</Text>
+        <Text style={styles.bigText}>Anytime.</Text>
         <View style={styles.smallContainer}>
-          <Text style={styles.smallText}>basket is the online store for both new and old product</Text>
+          <Text style={styles.smallText}>Basket Online Marketplace</Text>
         </View>
-        
-          <TouchableOpacity  onPress={() => navigation.navigate('Login')} style={styles.button}>
-            <Text style={styles.buttonText}>Get Started</Text>
-            <Image source={require('../../assets/arrow.png')} style={styles.icon} />
+        <View style={styles.button}>
+          <TouchableOpacity  onPress={() => navigation.navigate('Login')} >
+            <Text style={styles.buttonText}>skip</Text>
           </TouchableOpacity>
+          <TouchableOpacity  onPress={() => navigation.navigate('Onboard2')} >
+            <Text style={styles.buttonText}>next</Text>
+          </TouchableOpacity>
+        </View>
+          
       </ImageBackground>
     );
   };
@@ -43,53 +48,43 @@ import Top from '../components/Top';
     },
     firstText:{
       textAlign:'center',
-      fontSize: 18,
+      fontSize: 23,
       fontWeight: '400',
       color:'#fff',
-      marginTop: 30
+      marginTop: 12
     },
     bigText:{
       textAlign:'center',
-      fontSize: 29,
-      fontWeight: '600',
+      fontSize: 23,
+      fontWeight: '400',
       color:'#fff',
-      marginTop: 30
+      marginTop: 20
     },
     smallContainer:{
-      marginTop: 10,
+      marginTop: 120,
       alignSelf:'center',
       width: 200,
     },
     smallText:{
       textAlign:'center',
       fontSize: 14,
-      fontWeight: '400',
-      color:'#fff',
-    },
-  
-    icon:{
-      width: 25,
-      height: 22,
-      left:20
+      fontWeight: 'bold',
+      color:'#ff8137',
     },
     button:{
-      backgroundColor:'#ff8137',
-      width: 250,
-      height: 45,
-      borderWidth: 1,
-      borderColor: "#112d42",
-      borderRadius: 5,
       flexDirection: 'row',
-      alignSelf: 'center',
-      justifyContent:'center',
+      justifyContent:'space-between',
       alignItems: 'center',
-      marginTop: 30
+      marginTop: 30,
+      paddingLeft: 20,
+      paddingRight: 20,
     },
     buttonText:{
       fontSize:17,
-      fontWeight: '400',
-      color: '#fff',
-      textTransform: 'uppercase'
+      fontWeight: '600',
+      color: '#ff8137',
+      textTransform: 'capitalize',
+
     },
    
   });

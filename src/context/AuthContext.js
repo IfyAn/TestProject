@@ -5,38 +5,16 @@ import {BASE_URL} from '../config';
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({children}) => {
+export const AuthProvider = ({children, navigation}) => {
   const [userInfo, setUserInfo] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [splashLoading, setSplashLoading] = useState(false);
-
-  const register = (name, email, password) => {
-    setIsLoading(true);
-
-    axios
-      .post(`${BASE_URL}/register`, {
-        name,
-        email,
-        password,
-      })
-      .then(res => {
-        let userInfo = res.data;
-        setUserInfo(userInfo);
-        AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
-        setIsLoading(false);
-        console.log(userInfo);
-      })
-      .catch(e => {
-        console.log(`register error ${e}`);
-        setIsLoading(false);
-      });
-  };
 
   const login = (email, password) => {
     setIsLoading(true);
 
     axios
-      .post(`${BASE_URL}/login`, {
+      .post(`${BASE_URL}`, {
         email,
         password,
       })
@@ -104,7 +82,7 @@ export const AuthProvider = ({children}) => {
         isLoading,
         userInfo,
         splashLoading,
-        register,
+        //register,
         login,
         logout,
       }}>
