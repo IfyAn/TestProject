@@ -1,0 +1,1 @@
+export const BASE_URL ='https://kasppe.com.ng/farmsolhub/wp-json/wc/v3/customers'
